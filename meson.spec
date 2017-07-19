@@ -4,7 +4,7 @@
 #
 Name     : meson
 Version  : 0.41.2
-Release  : 2
+Release  : 3
 URL      : https://github.com/mesonbuild/meson/archive/0.41.2.tar.gz
 Source0  : https://github.com/mesonbuild/meson/archive/0.41.2.tar.gz
 Summary  : jonne2 library
@@ -13,7 +13,9 @@ License  : Apache-2.0
 Requires: meson-bin
 Requires: meson-python
 Requires: meson-doc
+Requires: ninja
 BuildRequires : cmake
+BuildRequires : ninja
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
@@ -57,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1500479548
+export SOURCE_DATE_EPOCH=1500481669
 python3 setup.py build -b py3
 
 %install
