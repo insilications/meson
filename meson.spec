@@ -4,21 +4,24 @@
 #
 Name     : meson
 Version  : 0.42.1
-Release  : 5
+Release  : 6
 URL      : https://github.com/mesonbuild/meson/releases/download/0.42.1/meson-0.42.1.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.42.1/meson-0.42.1.tar.gz
 Summary  : A high performance build system
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: meson-bin
-Requires: meson-python
+Requires: meson-python3
 Requires: meson-doc
+Requires: meson-python
 Requires: ninja
 BuildRequires : cmake
+BuildRequires : meson
 BuildRequires : ninja
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
+BuildRequires : python3
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
@@ -46,9 +49,19 @@ doc components for the meson package.
 %package python
 Summary: python components for the meson package.
 Group: Default
+Requires: meson-python3
 
 %description python
 python components for the meson package.
+
+
+%package python3
+Summary: python3 components for the meson package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the meson package.
 
 
 %prep
@@ -59,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505246854
+export SOURCE_DATE_EPOCH=1507158555
 python3 setup.py build -b py3
 
 %install
@@ -85,5 +98,8 @@ echo ----[ mark ]----
 %doc /usr/share/man/man1/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
