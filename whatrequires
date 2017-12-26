@@ -1,12 +1,17 @@
 # This file contains recursive sources that require this package
 FreeRDP
 adwaita-icon-theme
+appstream-glib
 at-spi2-atk
+at-spi2-core
+atk
 cheese
+clr-boot-manager
 colord
 faba-icon-theme
 fuse
 gdk-pixbuf
+gedit
 gimp
 glib
 gnome-backgrounds
@@ -27,9 +32,14 @@ gtksourceview
 hexchat
 json-glib
 jsoncpp
+libmediaart
+mesa
 meson
 moka-icon-theme
 nautilus
+network-manager-applet
+orc
+pango
 sshfs
 totem
 totem-pl-parser
