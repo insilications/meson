@@ -4,7 +4,7 @@
 #
 Name     : meson
 Version  : 0.44.0
-Release  : 11
+Release  : 12
 URL      : https://github.com/mesonbuild/meson/releases/download/0.44.0/meson-0.44.0.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.44.0/meson-0.44.0.tar.gz
 Summary  : A high performance build system
