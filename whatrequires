@@ -7,6 +7,7 @@ at-spi2-core
 atk
 cheese
 clr-boot-manager
+clr-init
 colord
 faba-icon-theme
 fuse
@@ -18,6 +19,7 @@ gnome-backgrounds
 gnome-bluetooth
 gnome-calendar
 gnome-font-viewer
+gnome-screenshot
 gnome-shell
 gnome-terminal
 gnome-tweak-tool
@@ -32,6 +34,8 @@ gtksourceview
 hexchat
 json-glib
 jsoncpp
+libdrm
+libinput
 libmediaart
 mesa
 meson
@@ -43,4 +47,5 @@ pango
 sshfs
 totem
 totem-pl-parser
+tracker
 zstd
