@@ -13,16 +13,22 @@ faba-icon-theme
 fuse
 gdk-pixbuf
 gedit
+gexiv2
 gimp
 glib
 gnome-backgrounds
 gnome-bluetooth
 gnome-calendar
+gnome-color-manager
 gnome-font-viewer
+gnome-photos
 gnome-screenshot
 gnome-shell
 gnome-terminal
+gnome-todo
 gnome-tweak-tool
+gom
+graphene
 gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
@@ -35,6 +41,7 @@ hexchat
 json-glib
 jsoncpp
 libdrm
+libgepub
 libinput
 libmediaart
 mesa
@@ -48,4 +55,5 @@ sshfs
 totem
 totem-pl-parser
 tracker
+tracker-miners
 zstd
