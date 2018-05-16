@@ -4,7 +4,7 @@
 #
 Name     : meson
 Version  : 0.45.1
-Release  : 16
+Release  : 17
 URL      : https://github.com/mesonbuild/meson/archive/0.45.1.tar.gz
 Source0  : https://github.com/mesonbuild/meson/archive/0.45.1.tar.gz
 Summary  : jonne2 library
