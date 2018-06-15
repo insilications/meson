@@ -20,7 +20,7 @@ BuildRequires : meson
 BuildRequires : ninja
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
+
 BuildRequires : python3
 BuildRequires : python3-dev
 BuildRequires : setuptools
