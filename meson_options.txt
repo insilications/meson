@@ -1,1 +1,10 @@
-option('foo_system_path', type: 'string', value: '')
+option(
+  'one',
+  type : 'string',
+)
+option(
+  'two',
+  type : 'combo',
+  choices : ['foo', 'bar'],
+  value : 'foo',
+)
