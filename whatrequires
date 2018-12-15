@@ -15,7 +15,6 @@ libgepub
 libgweather
 libmediaart
 orc
-spice-gtk
 spice-protocol
 systemd-netlogd
 totem-pl-parser
