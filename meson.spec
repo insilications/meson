@@ -4,7 +4,7 @@
 #
 Name     : meson
 Version  : 0.49.0
-Release  : 31
+Release  : 32
 URL      : https://github.com/mesonbuild/meson/releases/download/0.49.0/meson-0.49.0.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.49.0/meson-0.49.0.tar.gz
 Summary  : A high performance build system
