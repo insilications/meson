@@ -1,14 +1,9 @@
 # This file contains recursive sources that require this package
 colord
 compat-gtksourceview-soname3
-faba-icon-theme
-gdk-pixbuf
 geocode-glib
-gexiv2
-gnome-backgrounds
 gom
 graphene
-intel-gpu-tools
 jsoncpp
 libepoxy
 libgepub
@@ -17,5 +12,4 @@ libmediaart
 orc
 spice-protocol
 systemd-netlogd
-totem-pl-parser
 xorgproto
