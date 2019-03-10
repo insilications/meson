@@ -1,5 +1,4 @@
 # This file contains recursive sources that require this package
-colord
 compat-gtksourceview-soname3
 geocode-glib
 gom
@@ -7,9 +6,7 @@ graphene
 jsoncpp
 libepoxy
 libgepub
-libgweather
 libmediaart
 orc
-spice-protocol
 systemd-netlogd
 xorgproto

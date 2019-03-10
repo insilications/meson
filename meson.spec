@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x3BF4693BFEEB9428 (jpakkane@gmail.com)
 #
 Name     : meson
-Version  : 0.49.2
-Release  : 34
-URL      : https://github.com/mesonbuild/meson/releases/download/0.49.2/meson-0.49.2.tar.gz
-Source0  : https://github.com/mesonbuild/meson/releases/download/0.49.2/meson-0.49.2.tar.gz
-Source99 : https://github.com/mesonbuild/meson/releases/download/0.49.2/meson-0.49.2.tar.gz.asc
+Version  : 0.50.0
+Release  : 35
+URL      : https://github.com/mesonbuild/meson/releases/download/0.50.0/meson-0.50.0.tar.gz
+Source0  : https://github.com/mesonbuild/meson/releases/download/0.50.0/meson-0.50.0.tar.gz
+Source99 : https://github.com/mesonbuild/meson/releases/download/0.50.0/meson-0.50.0.tar.gz.asc
 Summary  : High productivity build system
 Group    : Development/Tools
 License  : Apache-2.0
@@ -36,7 +36,6 @@ Summary: bin components for the meson package.
 Group: Binaries
 Requires: meson-data = %{version}-%{release}
 Requires: meson-license = %{version}-%{release}
-Requires: meson-man = %{version}-%{release}
 
 %description bin
 bin components for the meson package.
@@ -85,18 +84,20 @@ python3 components for the meson package.
 
 
 %prep
-%setup -q -n meson-0.49.2
+%setup -q -n meson-0.50.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549384088
+export SOURCE_DATE_EPOCH=1552259158
+export LDFLAGS="${LDFLAGS} -fno-lto"
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/meson
 cp COPYING %{buildroot}/usr/share/package-licenses/meson/COPYING
