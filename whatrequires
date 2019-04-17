@@ -1,12 +1,9 @@
 # This file contains recursive sources that require this package
 compat-gtksourceview-soname3
-geocode-glib
 gom
-graphene
 jsoncpp
 libepoxy
 libgepub
 libmediaart
-orc
 systemd-netlogd
 xorgproto
