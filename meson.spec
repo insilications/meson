@@ -5,12 +5,12 @@
 # Source0 file verified with key 0x3BF4693BFEEB9428 (jpakkane@gmail.com)
 #
 Name     : meson
-Version  : 0.50.1
-Release  : 37
-URL      : https://github.com/mesonbuild/meson/releases/download/0.50.1/meson-0.50.1.tar.gz
-Source0  : https://github.com/mesonbuild/meson/releases/download/0.50.1/meson-0.50.1.tar.gz
-Source99 : https://github.com/mesonbuild/meson/releases/download/0.50.1/meson-0.50.1.tar.gz.asc
-Summary  : A high performance build system
+Version  : 0.51.0
+Release  : 38
+URL      : https://github.com/mesonbuild/meson/releases/download/0.51.0/meson-0.51.0.tar.gz
+Source0  : https://github.com/mesonbuild/meson/releases/download/0.51.0/meson-0.51.0.tar.gz
+Source99 : https://github.com/mesonbuild/meson/releases/download/0.51.0/meson-0.51.0.tar.gz.asc
+Summary  : High productivity build system
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: meson-bin = %{version}-%{release}
@@ -26,9 +26,10 @@ BuildRequires : buildreq-meson
 BuildRequires : ninja
 
 %description
-fast and as user friendly as possible. It supports many languages and compilers, including
-            GCC, Clang and Visual Studio. Its build definitions are written in a simple non-turing
-            complete DSL.
+ftdetect sets the filetype
+ftplugin sets Meson indentation rules
+indent does Meson indentation
+syntax does Meson syntax highlighting
 
 %package bin
 Summary: bin components for the meson package.
@@ -83,15 +84,22 @@ python3 components for the meson package.
 
 
 %prep
-%setup -q -n meson-0.50.1
+%setup -q -n meson-0.51.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1555523214
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export SOURCE_DATE_EPOCH=1560778670
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
