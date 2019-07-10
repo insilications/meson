@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x3BF4693BFEEB9428 (jpakkane@gmail.com)
 #
 Name     : meson
-Version  : 0.51.0
-Release  : 38
-URL      : https://github.com/mesonbuild/meson/releases/download/0.51.0/meson-0.51.0.tar.gz
-Source0  : https://github.com/mesonbuild/meson/releases/download/0.51.0/meson-0.51.0.tar.gz
-Source99 : https://github.com/mesonbuild/meson/releases/download/0.51.0/meson-0.51.0.tar.gz.asc
+Version  : 0.51.1
+Release  : 39
+URL      : https://github.com/mesonbuild/meson/releases/download/0.51.1/meson-0.51.1.tar.gz
+Source0  : https://github.com/mesonbuild/meson/releases/download/0.51.1/meson-0.51.1.tar.gz
+Source99 : https://github.com/mesonbuild/meson/releases/download/0.51.1/meson-0.51.1.tar.gz.asc
 Summary  : High productivity build system
 Group    : Development/Tools
 License  : Apache-2.0
@@ -84,14 +84,14 @@ python3 components for the meson package.
 
 
 %prep
-%setup -q -n meson-0.51.0
+%setup -q -n meson-0.51.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1560778670
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562732497
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
