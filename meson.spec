@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x3BF4693BFEEB9428 (jpakkane@gmail.com)
 #
 Name     : meson
-Version  : 0.51.2
-Release  : 42
-URL      : https://github.com/mesonbuild/meson/releases/download/0.51.2/meson-0.51.2.tar.gz
-Source0  : https://github.com/mesonbuild/meson/releases/download/0.51.2/meson-0.51.2.tar.gz
-Source1 : https://github.com/mesonbuild/meson/releases/download/0.51.2/meson-0.51.2.tar.gz.asc
+Version  : 0.52.0
+Release  : 43
+URL      : https://github.com/mesonbuild/meson/releases/download/0.52.0/meson-0.52.0.tar.gz
+Source0  : https://github.com/mesonbuild/meson/releases/download/0.52.0/meson-0.52.0.tar.gz
+Source1 : https://github.com/mesonbuild/meson/releases/download/0.52.0/meson-0.52.0.tar.gz.asc
 Summary  : High productivity build system
 Group    : Development/Tools
 License  : Apache-2.0
@@ -20,10 +20,12 @@ Requires: meson-man = %{version}-%{release}
 Requires: meson-python = %{version}-%{release}
 Requires: meson-python3 = %{version}-%{release}
 Requires: ninja
+Requires: tqdm
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-distutils3
 BuildRequires : buildreq-meson
 BuildRequires : ninja
+BuildRequires : tqdm
 
 %description
 ftdetect sets the filetype
@@ -84,14 +86,14 @@ python3 components for the meson package.
 
 
 %prep
-%setup -q -n meson-0.51.2
+%setup -q -n meson-0.52.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1566907547
+export SOURCE_DATE_EPOCH=1570426054
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
