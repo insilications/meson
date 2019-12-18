@@ -1,9 +1,9 @@
 # install syntax highlight files for vim
-install -dm 0755 %{buildroot}/usr/share/vim/vim81/{ftdetect,ftplugin,indent,syntax}
-install -m0644 ./data/syntax-highlighting/vim/ftdetect/*   %{buildroot}/usr/share/vim/vim81/ftdetect/
-install -m0644 ./data/syntax-highlighting/vim/ftplugin/*   %{buildroot}/usr/share/vim/vim81/ftplugin/
-install -m0644 ./data/syntax-highlighting/vim/indent/*     %{buildroot}/usr/share/vim/vim81/indent/
-install -m0644 ./data/syntax-highlighting/vim/syntax/*     %{buildroot}/usr/share/vim/vim81/syntax/
+install -dm 0755 %{buildroot}/usr/share/vim/vim82/{ftdetect,ftplugin,indent,syntax}
+install -m0644 ./data/syntax-highlighting/vim/ftdetect/*   %{buildroot}/usr/share/vim/vim82/ftdetect/
+install -m0644 ./data/syntax-highlighting/vim/ftplugin/*   %{buildroot}/usr/share/vim/vim82/ftplugin/
+install -m0644 ./data/syntax-highlighting/vim/indent/*     %{buildroot}/usr/share/vim/vim82/indent/
+install -m0644 ./data/syntax-highlighting/vim/syntax/*     %{buildroot}/usr/share/vim/vim82/syntax/
 # syntax highlight for nvim
 install -dm 0755 %{buildroot}/usr/share/nvim/runtime/{ftplugin,indent,syntax}
 install -m0644 ./data/syntax-highlighting/vim/ftplugin/*   %{buildroot}/usr/share/nvim/runtime/ftplugin/

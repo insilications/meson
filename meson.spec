@@ -6,11 +6,11 @@
 #
 Name     : meson
 Version  : 0.52.1
-Release  : 46
+Release  : 47
 URL      : https://github.com/mesonbuild/meson/releases/download/0.52.1/meson-0.52.1.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.52.1/meson-0.52.1.tar.gz
-Source1 : https://github.com/mesonbuild/meson/releases/download/0.52.1/meson-0.52.1.tar.gz.asc
-Summary  : High productivity build system
+Source1  : https://github.com/mesonbuild/meson/releases/download/0.52.1/meson-0.52.1.tar.gz.asc
+Summary  : A high performance build system
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: meson-bin = %{version}-%{release}
@@ -94,8 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575279768
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576633193
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -117,19 +116,24 @@ echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 ## install_append content
-install -dm 0755 %{buildroot}/usr/share/vim/vim81/{ftdetect,ftplugin,indent,syntax}
-install -m0644 ./data/syntax-highlighting/vim/ftdetect/*   %{buildroot}/usr/share/vim/vim81/ftdetect/
-install -m0644 ./data/syntax-highlighting/vim/ftplugin/*   %{buildroot}/usr/share/vim/vim81/ftplugin/
-install -m0644 ./data/syntax-highlighting/vim/indent/*     %{buildroot}/usr/share/vim/vim81/indent/
-install -m0644 ./data/syntax-highlighting/vim/syntax/*     %{buildroot}/usr/share/vim/vim81/syntax/
+# install syntax highlight files for vim
+install -dm 0755 %{buildroot}/usr/share/vim/vim82/{ftdetect,ftplugin,indent,syntax}
+install -m0644 ./data/syntax-highlighting/vim/ftdetect/*   %{buildroot}/usr/share/vim/vim82/ftdetect/
+install -m0644 ./data/syntax-highlighting/vim/ftplugin/*   %{buildroot}/usr/share/vim/vim82/ftplugin/
+install -m0644 ./data/syntax-highlighting/vim/indent/*     %{buildroot}/usr/share/vim/vim82/indent/
+install -m0644 ./data/syntax-highlighting/vim/syntax/*     %{buildroot}/usr/share/vim/vim82/syntax/
+# syntax highlight for nvim
 install -dm 0755 %{buildroot}/usr/share/nvim/runtime/{ftplugin,indent,syntax}
 install -m0644 ./data/syntax-highlighting/vim/ftplugin/*   %{buildroot}/usr/share/nvim/runtime/ftplugin/
 install -m0644 ./data/syntax-highlighting/vim/indent/*     %{buildroot}/usr/share/nvim/runtime/indent/
 install -m0644 ./data/syntax-highlighting/vim/syntax/*     %{buildroot}/usr/share/nvim/runtime/syntax/
+# syntax highlight for emacs
 install -dm 0755 %{buildroot}/usr/share/emacs/site-lisp
 install -m0644 ./data/syntax-highlighting/emacs/*          %{buildroot}/usr/share/emacs/site-lisp/
+# shell completion for bash
 install -dm 0755 %{buildroot}/usr/share/bash-completion/completions
 install -m0644 ./data/shell-completions/bash/*             %{buildroot}/usr/share/bash-completion/completions/
+# shell completions for zsh
 install -dm 0755 %{buildroot}/usr/share/zsh/site-functions
 install -m0644 ./data/shell-completions/zsh/*              %{buildroot}/usr/share/zsh/site-functions/
 ## install_append end
@@ -149,10 +153,10 @@ install -m0644 ./data/shell-completions/zsh/*              %{buildroot}/usr/shar
 /usr/share/nvim/runtime/indent/meson.vim
 /usr/share/nvim/runtime/syntax/meson.vim
 /usr/share/polkit-1/actions/com.mesonbuild.install.policy
-/usr/share/vim/vim81/ftdetect/meson.vim
-/usr/share/vim/vim81/ftplugin/meson.vim
-/usr/share/vim/vim81/indent/meson.vim
-/usr/share/vim/vim81/syntax/meson.vim
+/usr/share/vim/vim82/ftdetect/meson.vim
+/usr/share/vim/vim82/ftplugin/meson.vim
+/usr/share/vim/vim82/indent/meson.vim
+/usr/share/vim/vim82/syntax/meson.vim
 /usr/share/zsh/site-functions/_meson
 
 %files license
