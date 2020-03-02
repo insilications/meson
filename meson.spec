@@ -6,11 +6,11 @@
 #
 Name     : meson
 Version  : 0.53.2
-Release  : 51
+Release  : 52
 URL      : https://github.com/mesonbuild/meson/releases/download/0.53.2/meson-0.53.2.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.53.2/meson-0.53.2.tar.gz
 Source1  : https://github.com/mesonbuild/meson/releases/download/0.53.2/meson-0.53.2.tar.gz.asc
-Summary  : A high performance build system
+Summary  : High productivity build system
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: meson-bin = %{version}-%{release}
@@ -80,6 +80,7 @@ python components for the meson package.
 Summary: python3 components for the meson package.
 Group: Default
 Requires: python3-core
+Provides: pypi(meson)
 
 %description python3
 python3 components for the meson package.
@@ -94,7 +95,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582669952
+export SOURCE_DATE_EPOCH=1583173411
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
