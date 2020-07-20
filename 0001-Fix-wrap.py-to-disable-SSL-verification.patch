@@ -1,0 +1,49 @@
+From 89bb3a2cb210208330e7c9ae123ddcdfc76aba27 Mon Sep 17 00:00:00 2001
+From: insilications <boboniboni@gmail.com>
+Date: Mon, 20 Jul 2020 17:44:17 -0300
+Subject: [PATCH 1/2] Fix wrap.py to disable SSL verification
+
+---
+ mesonbuild/wrap/wrap.py | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/mesonbuild/wrap/wrap.py b/mesonbuild/wrap/wrap.py
+index aba220e1b..b0dec21ce 100644
+--- a/mesonbuild/wrap/wrap.py
++++ b/mesonbuild/wrap/wrap.py
+@@ -83,7 +83,9 @@ def open_wrapdburl(urlstring: str) -> 'http.client.HTTPResponse':
+     url = whitelist_wrapdb(urlstring)
+     if has_ssl:
+         try:
+-            return urllib.request.urlopen(urllib.parse.urlunparse(url), timeout=REQ_TIMEOUT)
++            sslctx = ssl.SSLContext(ssl.PROTOCOL_TLS)
++            sslctx.verify_mode = ssl.CERT_NONE
++            return urllib.request.urlopen(urllib.parse.urlunparse(url), timeout=REQ_TIMEOUT, context=sslctx)
+         except urllib.error.URLError as excp:
+             raise WrapException('WrapDB connection failed to {} with error {}'.format(urlstring, excp))
+ 
+@@ -93,7 +95,9 @@ def open_wrapdburl(urlstring: str) -> 'http.client.HTTPResponse':
+         mlog.warning('SSL module not available in {}: WrapDB traffic not authenticated.'.format(sys.executable))
+         SSL_WARNING_PRINTED = True
+     try:
+-        return urllib.request.urlopen(urllib.parse.urlunparse(nossl_url), timeout=REQ_TIMEOUT)
++        sslctx = ssl.SSLContext(ssl.PROTOCOL_TLS)
++        sslctx.verify_mode = ssl.CERT_NONE
++        return urllib.request.urlopen(urllib.parse.urlunparse(nossl_url), timeout=REQ_TIMEOUT, context=sslctx)
+     except urllib.error.URLError as excp:
+         raise WrapException('WrapDB connection failed to {} with error {}'.format(urlstring, excp))
+ 
+@@ -420,7 +424,9 @@ class Resolver:
+         else:
+             try:
+                 req = urllib.request.Request(urlstring, headers={'User-Agent': 'mesonbuild/{}'.format(coredata.version)})
+-                resp = urllib.request.urlopen(req, timeout=REQ_TIMEOUT)
++                sslctx = ssl.SSLContext(ssl.PROTOCOL_TLS)
++                sslctx.verify_mode = ssl.CERT_NONE
++                resp = urllib.request.urlopen(req, timeout=REQ_TIMEOUT, context=sslctx)
+             except urllib.error.URLError as e:
+                 mlog.log(str(e))
+                 raise WrapException('could not get {} is the internet available?'.format(urlstring))
+-- 
+2.27.0
+

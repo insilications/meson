@@ -1,0 +1,27 @@
+From ba6c0749893d7c6572d70cfacf2f212871348943 Mon Sep 17 00:00:00 2001
+From: insilications <boboniboni@gmail.com>
+Date: Mon, 20 Jul 2020 17:45:08 -0300
+Subject: [PATCH 2/2] Disable clock skew detection (ninja 1.10.0 bug)
+
+---
+ mesonbuild/backend/backends.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/mesonbuild/backend/backends.py b/mesonbuild/backend/backends.py
+index cfd3a397f..f4c5ac885 100644
+--- a/mesonbuild/backend/backends.py
++++ b/mesonbuild/backend/backends.py
+@@ -877,8 +877,8 @@ class Backend:
+             # On Windows disk time stamps sometimes point
+             # to the future by a minuscule amount, less than
+             # 0.001 seconds. I don't know why.
+-            if delta > 0.001:
+-                raise MesonException('Clock skew detected. File {} has a time stamp {:.4f}s in the future.'.format(absf, delta))
++            #if delta > 0.001:
++            #    raise MesonException('Clock skew detected. File {} has a time stamp {:.4f}s in the future.'.format(absf, delta))
+ 
+     def build_target_to_cmd_array(self, bt):
+         if isinstance(bt, build.BuildTarget):
+-- 
+2.27.0
+

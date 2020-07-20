@@ -6,7 +6,7 @@
 #
 Name     : meson
 Version  : 0.55.0
-Release  : 57
+Release  : 60
 URL      : https://github.com/mesonbuild/meson/releases/download/0.55.0/meson-0.55.0.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.55.0/meson-0.55.0.tar.gz
 Source1  : https://github.com/mesonbuild/meson/releases/download/0.55.0/meson-0.55.0.tar.gz.asc
@@ -15,7 +15,6 @@ Group    : Development/Tools
 License  : Apache-2.0
 Requires: meson-bin = %{version}-%{release}
 Requires: meson-data = %{version}-%{release}
-Requires: meson-license = %{version}-%{release}
 Requires: meson-man = %{version}-%{release}
 Requires: meson-python = %{version}-%{release}
 Requires: meson-python3 = %{version}-%{release}
@@ -26,6 +25,8 @@ BuildRequires : buildreq-distutils3
 BuildRequires : buildreq-meson
 BuildRequires : ninja
 BuildRequires : tqdm
+Patch1: 0001-Fix-wrap.py-to-disable-SSL-verification.patch
+Patch2: 0002-Disable-clock-skew-detection-ninja-1.10.0-bug.patch
 
 %description
 ftdetect sets the filetype
@@ -37,7 +38,6 @@ syntax does Meson syntax highlighting
 Summary: bin components for the meson package.
 Group: Binaries
 Requires: meson-data = %{version}-%{release}
-Requires: meson-license = %{version}-%{release}
 
 %description bin
 bin components for the meson package.
@@ -49,14 +49,6 @@ Group: Data
 
 %description data
 data components for the meson package.
-
-
-%package license
-Summary: license components for the meson package.
-Group: Default
-
-%description license
-license components for the meson package.
 
 
 %package man
@@ -89,13 +81,15 @@ python3 components for the meson package.
 %prep
 %setup -q -n meson-0.55.0
 cd %{_builddir}/meson-0.55.0
+%patch1 -p1
+%patch2 -p1
 
 %build
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
+unset http_proxy
+unset https_proxy
+unset no_proxy
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1594611246
+export SOURCE_DATE_EPOCH=1595278272
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -110,8 +104,6 @@ python3 setup.py build
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/package-licenses/meson
-cp %{_builddir}/meson-0.55.0/COPYING %{buildroot}/usr/share/package-licenses/meson/2b8b815229aa8a61e483fb4ba0588b8b6c491890
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -159,10 +151,6 @@ install -m0644 ./data/shell-completions/zsh/*              %{buildroot}/usr/shar
 /usr/share/vim/vim82/indent/meson.vim
 /usr/share/vim/vim82/syntax/meson.vim
 /usr/share/zsh/site-functions/_meson
-
-%files license
-%defattr(0644,root,root,0755)
-/usr/share/package-licenses/meson/2b8b815229aa8a61e483fb4ba0588b8b6c491890
 
 %files man
 %defattr(0644,root,root,0755)
