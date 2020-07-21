@@ -1,4 +1,4 @@
-From ba6c0749893d7c6572d70cfacf2f212871348943 Mon Sep 17 00:00:00 2001
+From 8b299d4b011c4a6700aac35f13d56bb15418bf68 Mon Sep 17 00:00:00 2001
 From: insilications <boboniboni@gmail.com>
 Date: Mon, 20 Jul 2020 17:45:08 -0300
 Subject: [PATCH 2/2] Disable clock skew detection (ninja 1.10.0 bug)
