@@ -4,9 +4,9 @@
 #
 Name     : meson
 Version  : 0.55.0
-Release  : 61
-URL      : /insilications/build/clearlinux/packages/meson/meson-0.55.0.zip
-Source0  : /insilications/build/clearlinux/packages/meson/meson-0.55.0.zip
+Release  : 62
+URL      : file:///insilications/build/clearlinux/packages/meson/meson-0.55.0.zip
+Source0  : file:///insilications/build/clearlinux/packages/meson/meson-0.55.0.zip
 Summary  : A high performance build system
 Group    : Development/Tools
 License  : Apache-2.0
@@ -19,6 +19,7 @@ Requires: ninja
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-distutils3
 BuildRequires : buildreq-meson
+BuildRequires : findutils
 BuildRequires : ninja
 Patch1: 0001-Fix-wrap.py-to-disable-SSL-verification.patch
 Patch2: 0002-Disable-clock-skew-detection-ninja-1.10.0-bug.patch
@@ -84,7 +85,7 @@ unset http_proxy
 unset https_proxy
 unset no_proxy
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1595291436
+export SOURCE_DATE_EPOCH=1597131723
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
