@@ -1,2 +1,2 @@
-0001-Fix-wrap.py-to-disable-SSL-verification.patch
-0002-Disable-clock-skew-detection-ninja-1.10.0-bug.patch
+#0001-Fix-wrap.py-to-disable-SSL-verification.patch
+#0002-Disable-clock-skew-detection-ninja-1.10.0-bug.patch
