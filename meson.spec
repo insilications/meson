@@ -4,7 +4,7 @@
 #
 Name     : meson
 Version  : 0.55
-Release  : 71
+Release  : 72
 URL      : file:///insilications/build/clearlinux/packages/meson/meson-v0.55.tar.gz
 Source0  : file:///insilications/build/clearlinux/packages/meson/meson-v0.55.tar.gz
 Summary  : A high performance build system
@@ -82,7 +82,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1600334068
+export SOURCE_DATE_EPOCH=1600334587
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
