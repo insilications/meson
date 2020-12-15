@@ -6,7 +6,7 @@
 #
 Name     : meson
 Version  : 0.56.0
-Release  : 67
+Release  : 68
 URL      : https://github.com/mesonbuild/meson/releases/download/0.56.0/meson-0.56.0.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.56.0/meson-0.56.0.tar.gz
 Source1  : https://github.com/mesonbuild/meson/releases/download/0.56.0/meson-0.56.0.tar.gz.asc
