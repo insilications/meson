@@ -6,7 +6,7 @@
 #
 Name     : meson
 Version  : 0.57.2
-Release  : 74
+Release  : 75
 URL      : https://github.com/mesonbuild/meson/releases/download/0.57.2/meson-0.57.2.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.57.2/meson-0.57.2.tar.gz
 Source1  : https://github.com/mesonbuild/meson/releases/download/0.57.2/meson-0.57.2.tar.gz.asc
