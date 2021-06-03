@@ -6,7 +6,7 @@
 #
 Name     : meson
 Version  : 0.58.0
-Release  : 78
+Release  : 79
 URL      : https://github.com/mesonbuild/meson/releases/download/0.58.0/meson-0.58.0.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.58.0/meson-0.58.0.tar.gz
 Source1  : https://github.com/mesonbuild/meson/releases/download/0.58.0/meson-0.58.0.tar.gz.asc
@@ -27,6 +27,7 @@ BuildRequires : buildreq-meson
 BuildRequires : ninja
 BuildRequires : tqdm
 Patch1: 0001-gnome-Fix-gtkdoc-generation.patch
+Patch2: 0002-interpreter-flatten-environment-initial-values.patch
 
 %description
 ftdetect sets the filetype
@@ -91,13 +92,14 @@ python3 components for the meson package.
 %setup -q -n meson-0.58.0
 cd %{_builddir}/meson-0.58.0
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622758072
+export SOURCE_DATE_EPOCH=1622759375
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
