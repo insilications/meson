@@ -6,7 +6,7 @@
 #
 Name     : meson
 Version  : 0.58.1
-Release  : 80
+Release  : 81
 URL      : https://github.com/mesonbuild/meson/releases/download/0.58.1/meson-0.58.1.tar.gz
 Source0  : https://github.com/mesonbuild/meson/releases/download/0.58.1/meson-0.58.1.tar.gz
 Source1  : https://github.com/mesonbuild/meson/releases/download/0.58.1/meson-0.58.1.tar.gz.asc
