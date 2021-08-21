@@ -1,5 +1,6 @@
 PKG_NAME := meson
-URL = https://github.com/mesonbuild/meson/releases/download/0.59.1/meson-0.59.1.tar.gz
+URL = https://github.com/mesonbuild/meson.git
 ARCHIVES = 
+ARCHIVES_GIT = 
 
 include ../common/Makefile.common
