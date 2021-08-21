@@ -1,3 +1,14 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
 ninja
+ninja
+mypy
+ninja
+tqdm
+typing_extensions
+buildreq-cmake
+buildreq-distutils3
+buildreq-meson
+mypy
+ninja
+tqdm
